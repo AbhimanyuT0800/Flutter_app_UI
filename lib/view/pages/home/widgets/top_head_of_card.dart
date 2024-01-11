@@ -4,16 +4,16 @@ import 'package:ui_tutorial/core/utils/dynamic_size.dart';
 import 'package:ui_tutorial/view/pages/home/widgets/home_page_common_card.dart';
 
 class TopHeadOfCard extends StatelessWidget {
-  TopHeadOfCard(
+ const TopHeadOfCard(
       {super.key,
       required this.child,
       required this.subTitle,
       required this.title,
       this.imgBlur = false});
-  Widget child;
-  String title;
-  String subTitle;
-  bool imgBlur;
+ final Widget child;
+ final String title;
+ final String subTitle;
+ final bool imgBlur;
 
   @override
   Widget build(BuildContext context) {

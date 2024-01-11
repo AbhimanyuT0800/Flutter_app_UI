@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_tutorial/core/utils/dynamic_size.dart';
 
-// ignore: must_be_immutable
 class CommonAppBar extends StatelessWidget {
-  CommonAppBar({super.key, this.subTitle = true});
-  bool subTitle = true;
+  const CommonAppBar({super.key, this.subTitle = true});
+  final bool subTitle;
 
   @override
   Widget build(BuildContext context) {

@@ -3,8 +3,8 @@ import 'package:ui_tutorial/core/utils/dynamic_size.dart';
 import 'package:ui_tutorial/molten_navigation/my_customise_molten_navigation.dart';
 import 'package:ui_tutorial/view/pages/community/community.dart';
 import 'package:ui_tutorial/view/pages/home/home_page.dart';
-import 'package:ui_tutorial/view/pages/library/root_library/library.dart';
 import 'package:ui_tutorial/view/pages/jobs/jobs.dart';
+import 'package:ui_tutorial/view/pages/life_skill_page/life_skills.dart';
 import 'package:ui_tutorial/view/widgets/main_scafold/common_scafold_bg.dart';
 
 List selectedImages = [
@@ -19,6 +19,15 @@ List unSelected = [
   'assets/icons/ic_community.png',
   'assets/icons/ic_jobs.png'
 ];
+int selectedIndex = 0;
+PageController controller = PageController();
+List<Widget> pages = [HomePage(), LifeSkills(), CommunityPage(), JobsPage()];
+
+Map<int, GlobalKey<NavigatorState>> navigatorKeys = {
+  0: GlobalKey<NavigatorState>(),
+  1: GlobalKey<NavigatorState>(),
+  2: GlobalKey<NavigatorState>(),
+};
 
 class BottomNavigationPage extends StatefulWidget {
   const BottomNavigationPage({super.key});
@@ -29,10 +38,6 @@ class BottomNavigationPage extends StatefulWidget {
 }
 
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
-  int selectedIndex = 0;
-  PageController controller = PageController();
-  List<Widget> pages = [HomePage(), Library(), CommunityPage(), JobsPage()];
-
   @override
   Widget build(BuildContext context) {
     return CommonScafold(
@@ -98,4 +103,13 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
       // ),
     );
   }
+}
+
+buildNavigator() {
+  return Navigator(
+    key: navigatorKeys[selectedIndex],
+    onGenerateRoute: (RouteSettings settings) {
+      return MaterialPageRoute(builder: (_) => pages.elementAt(selectedIndex));
+    },
+  );
 }

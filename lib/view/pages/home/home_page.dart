@@ -140,7 +140,7 @@ class HomePage extends StatelessWidget {
                               Text(
                                 'Today  |  16:52 PM',
                                 style: GoogleFonts.urbanist(
-                                    color: const Color(0xfffe0e0e0),
+                                    color: const Color(0xffffe0e0e0),
                                     fontSize: context.screenWidth(width: 13),
                                     fontWeight: FontWeight.w500,
                                     letterSpacing: .2,

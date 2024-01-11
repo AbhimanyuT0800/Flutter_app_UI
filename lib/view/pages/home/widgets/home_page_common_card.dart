@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ui_tutorial/core/utils/dynamic_size.dart';
 
 class HomePageCommonCard extends StatelessWidget {
-  HomePageCommonCard({super.key, required this.child});
-  Widget child;
+  const HomePageCommonCard({super.key, required this.child});
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
