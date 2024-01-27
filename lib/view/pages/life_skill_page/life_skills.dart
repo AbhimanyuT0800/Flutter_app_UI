@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_tutorial/core/utils/dynamic_size.dart';
-import 'package:ui_tutorial/view/pages/life_skill_page/lession.dart';
 import 'package:ui_tutorial/view/widgets/commonly_used/common_app_bar.dart';
+import 'package:ui_tutorial/view/widgets/extra/local_list_tile.dart';
 import 'package:ui_tutorial/view/widgets/main_scafold/common_scafold_bg.dart';
 
 class LifeSkills extends StatelessWidget {
@@ -42,8 +42,8 @@ class LifeSkills extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color(0xff191b05),
                     borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      const BoxShadow(
+                    boxShadow: const [
+                      BoxShadow(
                           color: Colors.black,
                           spreadRadius: 1,
                           offset: Offset(1, 1)),
@@ -51,35 +51,8 @@ class LifeSkills extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10),
-                    child: ListTile(
-                      title: Text(
-                        'Facilitator Manual - Understanding \nYourself ${index + 1}',
-                        style: GoogleFonts.mulish(
-                          color: Colors.white,
-                          fontSize: context.screenHeight(heigth: 14),
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      subtitle: Text(
-                        'Status: Not Started \nDuration:',
-                        style: GoogleFonts.mulish(
-                            color: const Color(0xff8E8E8E),
-                            fontSize: context.screenWidth(width: 9),
-                            fontWeight: FontWeight.w400,
-                            height: 2),
-                      ),
-                      trailing: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const LessionPage()));
-                        },
-                        child: const Image(
-                          image: AssetImage(
-                              'assets/icons/icon _document download_.png'),
-                        ),
-                      ),
+                    child: LocalListTile(
+                      index: index,
                     ),
                   ),
                 );

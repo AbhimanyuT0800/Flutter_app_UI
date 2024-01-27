@@ -27,6 +27,7 @@ Map<int, GlobalKey<NavigatorState>> navigatorKeys = {
   0: GlobalKey<NavigatorState>(),
   1: GlobalKey<NavigatorState>(),
   2: GlobalKey<NavigatorState>(),
+  4: GlobalKey<NavigatorState>(),
 };
 
 class BottomNavigationPage extends StatefulWidget {
@@ -95,7 +96,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
               selectedIndex = value;
             });
           }),
-      body: pages[selectedIndex],
+      body: buildNavigator(),
       // body: PageView(
       //   controller: PageController(keepPage: false,initialPage: selectedIndex),
 

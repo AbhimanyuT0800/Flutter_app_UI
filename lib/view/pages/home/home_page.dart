@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_tutorial/core/utils/dynamic_size.dart';
-import 'package:ui_tutorial/view/pages/home/widgets/home_page_common_card.dart';
 import 'package:ui_tutorial/view/pages/home/widgets/top_head_of_card.dart';
 import 'package:ui_tutorial/view/widgets/commonly_used/common_app_bar.dart';
 
@@ -17,7 +16,7 @@ class HomePage extends StatelessWidget {
               top: context.screenWidth(width: 50),
               left: context.screenWidth(width: 44),
               right: context.screenHeight(heigth: 24)),
-          child: CommonAppBar(),
+          child: const CommonAppBar(),
         ),
         spaceBw(height: context.screenWidth(width: 15)),
         Container(
@@ -140,7 +139,7 @@ class HomePage extends StatelessWidget {
                               Text(
                                 'Today  |  16:52 PM',
                                 style: GoogleFonts.urbanist(
-                                    color: const Color(0xffffe0e0e0),
+                                    color: const Color(0xffe0e0e0),
                                     fontSize: context.screenWidth(width: 13),
                                     fontWeight: FontWeight.w500,
                                     letterSpacing: .2,
